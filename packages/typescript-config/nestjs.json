@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "Nest.js",
+  "compilerOptions": {
+    "declarationMap": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "noFallthroughCasesInSwitch": false,
+    "preserveConstEnums": true,
+    "resolveJsonModule": true,
+    "removeComments": true,
+    "declaration": true,
+    "noLib": false,
+    "sourceMap": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "checkJs": false,
+    "moduleResolution": "Node",
+    "module": "CommonJS",
+    "lib": [
+      "es2015"
+    ],
+    "target": "ES2020"
+  }
+}
