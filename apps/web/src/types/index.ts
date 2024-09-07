@@ -1,1 +1,1 @@
-export * from './NextPageWithLayout'
+export * from './NextPageWithLayout';

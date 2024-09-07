@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-magic-numbers */
 import { NestFactory } from '@nestjs/core';
 
 import { AppModule } from './app.module';
@@ -7,4 +8,4 @@ async function bootstrap() {
   await app.listen(8080);
 }
 
-bootstrap();
+void bootstrap();
