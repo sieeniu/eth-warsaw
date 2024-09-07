@@ -35,16 +35,10 @@ export class GolemService {
         },
       };
 
-      console.log('Starting work on Golem!');
-      console.log('Computing 2+2 on a single rented machine');
-
       const singleRental = await this.golemNetworkProvider.oneOf({ order });
-
-      const t = await singleRental.getExeUnit();
-      const x = await t.run('echo $((2 + 2))');
-      return x;
+      const unit = await singleRental.getExeUnit();
+      return unit.run('echo $((2 + 2))');
     } catch (err) {
-      console.error('Something went wrong:', err);
       throw new BadRequestException(err);
     } finally {
       await this.golemNetworkProvider.disconnect();
