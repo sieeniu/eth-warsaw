@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/ban-types */
 import { AppProps } from 'next/app';
+import '@/styles/globals.css'
 
 import { NextPageWithLayout } from '@/types';
 
