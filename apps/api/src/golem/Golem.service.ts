@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-magic-numbers */
 import { GolemNetwork, MarketOrderSpec, Result } from '@golem-sdk/golem-js';
+import { pinoPrettyLogger } from '@golem-sdk/pino-logger';
 import { BadRequestException, Injectable } from '@nestjs/common';
 
 import { AppConfigService } from '../config';
@@ -9,7 +10,12 @@ export class GolemService {
   private golemNetworkProvider: GolemNetwork;
 
   public constructor(private readonly appConfig: AppConfigService) {
-    this.golemNetworkProvider = new GolemNetwork();
+    const logger = pinoPrettyLogger({
+      level: 'info',
+    });
+    this.golemNetworkProvider = new GolemNetwork({
+      logger,
+    });
   }
 
   public async executeTask(): Promise<Result<unknown>> {
@@ -34,10 +40,16 @@ export class GolemService {
           },
         },
       };
-
+      console.log('TEST');
       const singleRental = await this.golemNetworkProvider.oneOf({ order });
+      console.log(singleRental);
       const exeUnit = await singleRental.getExeUnit();
-      return exeUnit.run('echo $((2 + 2))');
+      console.log(exeUnit);
+
+      const response = await exeUnit.run('echo $((2 + 2))');
+
+      await singleRental.stopAndFinalize();
+      return response;
     } catch (err) {
       throw new BadRequestException(err);
     } finally {
