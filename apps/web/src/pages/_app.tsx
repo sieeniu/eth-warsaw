@@ -9,7 +9,6 @@ type AppPropsWithLayout<AP = unknown> = AppProps<AP> & {
 
 const App = ({ Component, pageProps }: AppPropsWithLayout<{}>) => {
   const getLayout = Component.getLayout || (page => page);
-
   return <>{getLayout(<Component {...pageProps} />)}</>;
 };
 
