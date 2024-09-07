@@ -40,11 +40,8 @@ export class GolemService {
           },
         },
       };
-      console.log('TEST');
       const singleRental = await this.golemNetworkProvider.oneOf({ order });
-      console.log(singleRental);
       const exeUnit = await singleRental.getExeUnit();
-      console.log(exeUnit);
 
       const response = await exeUnit.run('echo $((2 + 2))');
 
