@@ -5,7 +5,7 @@ import { DefaultLayout } from '@/layouts';
 
 const TaskCreate = () => {
   const [isUploading, setIsUploading] = useState(false);
-  const [file, setFile] = useState<File | null>(null);
+  const [file, setFile] = useState<File | undefined>(undefined);
 
   const onDrop = useCallback((acceptedFiles: File[]) => {
     if (acceptedFiles.length > 0) {
@@ -18,7 +18,7 @@ const TaskCreate = () => {
   }, []);
 
   const removeFile = () => {
-    setFile(null);
+    setFile(undefined);
   };
 
   const { getRootProps, getInputProps, isDragActive } = useDropzone({

@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import React from 'react';
 
 import {
@@ -16,7 +15,7 @@ const tasks = [
   { id: 3, title: 'Zadanie 3', status: 'Nie rozpoczęte' },
 ];
 
-const TaskTable = props => {
+const TaskTable = () => {
   return (
     <>
       <h1 className="text-2xl font-bold mb-4">Lista zadań</h1>
@@ -41,7 +40,5 @@ const TaskTable = props => {
     </>
   );
 };
-
-TaskTable.propTypes = {};
 
 export default TaskTable;
