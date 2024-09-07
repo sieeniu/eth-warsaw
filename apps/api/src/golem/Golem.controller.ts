@@ -1,7 +1,7 @@
+import { Result } from '@golem-sdk/golem-js';
 import { Controller, Get } from '@nestjs/common';
 
 import { GolemService } from './Golem.service';
-import { Result } from '@golem-sdk/golem-js';
 
 @Controller('golem')
 export class GolemController {
