@@ -9,9 +9,12 @@ export class GolemService {
   private golemNetworkProvider: GolemNetwork;
 
   public constructor(private readonly appConfig: AppConfigService) {
-    /*    const logger = pinoPrettyLogger({
-                  level: 'info',
-                });*/
+    /*
+            const logger = pinoPrettyLogger({
+              level: 'info',
+            });
+        */
+
     this.golemNetworkProvider = new GolemNetwork({
       // logger,
       api: {
