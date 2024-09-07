@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-magic-numbers */
 import { GolemNetwork, MarketOrderSpec, Result } from '@golem-sdk/golem-js';
-import { Injectable } from '@nestjs/common';
+import { BadRequestException, Injectable } from '@nestjs/common';
 
 import { AppConfigService } from '../config';
 
@@ -45,6 +45,7 @@ export class GolemService {
       return x;
     } catch (err) {
       console.error('Something went wrong:', err);
+      throw new BadRequestException(err);
     } finally {
       await this.golemNetworkProvider.disconnect();
     }
