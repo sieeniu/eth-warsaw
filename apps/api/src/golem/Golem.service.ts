@@ -15,6 +15,10 @@ export class GolemService {
     });
     this.golemNetworkProvider = new GolemNetwork({
       logger,
+      api: {
+        key: this.appConfig.getInferred('yagnaAppKey'),
+        url: 'http://185.238.72.212:7465',
+      },
     });
   }
 
