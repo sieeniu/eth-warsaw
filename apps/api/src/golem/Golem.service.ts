@@ -36,8 +36,8 @@ export class GolemService {
       };
 
       const singleRental = await this.golemNetworkProvider.oneOf({ order });
-      const unit = await singleRental.getExeUnit();
-      return unit.run('echo $((2 + 2))');
+      const exeUnit = await singleRental.getExeUnit();
+      return exeUnit.run('echo $((2 + 2))');
     } catch (err) {
       throw new BadRequestException(err);
     } finally {
