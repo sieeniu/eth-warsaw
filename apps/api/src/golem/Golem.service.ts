@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-magic-numbers */
-import { GolemNetwork, MarketOrderSpec } from '@golem-sdk/golem-js';
+import { GolemNetwork, MarketOrderSpec, Result } from '@golem-sdk/golem-js';
 import { Injectable } from '@nestjs/common';
 
 import { AppConfigService } from '../config';
@@ -12,7 +12,7 @@ export class GolemService {
     this.golemNetworkProvider = new GolemNetwork();
   }
 
-  public async executeTask() {
+  public async executeTask(): Promise<Result<unknown>> {
     try {
       await this.golemNetworkProvider.connect();
       const order: MarketOrderSpec = {
@@ -40,11 +40,9 @@ export class GolemService {
 
       const singleRental = await this.golemNetworkProvider.oneOf({ order });
 
-      await singleRental
-        .getExeUnit()
-        .then(exe => exe.run('echo $((2 + 2))'))
-        .then(res => console.log('Result:', res.stdout))
-        .catch(err => console.error('Something went wrong:', err));
+      const t = await singleRental.getExeUnit();
+      const x = await t.run('echo $((2 + 2))');
+      return x;
     } catch (err) {
       console.error('Something went wrong:', err);
     } finally {
