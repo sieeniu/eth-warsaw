@@ -1,4 +1,4 @@
-import { IsNumber, IsString } from 'class-validator';
+import { IsInt, IsNumber, IsString, Min } from 'class-validator';
 
 export class EnvVarValidator {
   @IsString()
@@ -12,4 +12,19 @@ export class EnvVarValidator {
 
   @IsNumber()
   PRICING_MAX_ENV_PER_HOUR_PRICE!: number;
+
+  @IsString()
+  DB_HOST!: string;
+
+  @IsInt()
+  DB_PORT!: number;
+
+  @IsString()
+  DB_USER!: string;
+
+  @IsString()
+  DB_PASSWORD!: string;
+
+  @IsString()
+  DB_NAME!: string;
 }

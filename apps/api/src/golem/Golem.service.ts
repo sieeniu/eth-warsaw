@@ -9,7 +9,19 @@ export class GolemService {
   private golemNetworkProvider: GolemNetwork;
 
   public constructor(private readonly appConfig: AppConfigService) {
-    this.golemNetworkProvider = new GolemNetwork();
+    /*
+            const logger = pinoPrettyLogger({
+              level: 'info',
+            });
+        */
+
+    this.golemNetworkProvider = new GolemNetwork({
+      // logger,
+      api: {
+        key: this.appConfig.getInferred('yagnaAppKey'),
+        url: 'http://185.238.72.212:7465',
+      },
+    });
   }
 
   public async executeTask(): Promise<Result<unknown>> {
@@ -34,10 +46,13 @@ export class GolemService {
           },
         },
       };
-
       const singleRental = await this.golemNetworkProvider.oneOf({ order });
       const exeUnit = await singleRental.getExeUnit();
-      return exeUnit.run('echo $((2 + 2))');
+
+      const response = await exeUnit.run('echo $((2 + 2))');
+
+      await singleRental.stopAndFinalize();
+      return response;
     } catch (err) {
       throw new BadRequestException(err);
     } finally {
