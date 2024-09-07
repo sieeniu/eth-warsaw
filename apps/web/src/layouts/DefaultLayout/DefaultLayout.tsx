@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import { PropsWithChildren } from 'react';
+import { IDKitWidget, VerificationLevel, ISuccessResult } from '@worldcoin/idkit'
 
 import {
   NavigationMenu,
@@ -31,6 +32,7 @@ export const DefaultLayout = ({ children }: PropsWithChildren) => {
             </NavigationMenuList>
           </NavigationMenu>
         </nav>
+
       </header>
       <main className="p-4">{children}</main>
     </>
