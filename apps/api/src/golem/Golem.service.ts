@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-magic-numbers */
 import { GolemNetwork, MarketOrderSpec, Result } from '@golem-sdk/golem-js';
-import { pinoPrettyLogger } from '@golem-sdk/pino-logger';
 import { BadRequestException, Injectable } from '@nestjs/common';
 
 import { AppConfigService } from '../config';
@@ -10,11 +9,11 @@ export class GolemService {
   private golemNetworkProvider: GolemNetwork;
 
   public constructor(private readonly appConfig: AppConfigService) {
-    const logger = pinoPrettyLogger({
-      level: 'info',
-    });
+    /*    const logger = pinoPrettyLogger({
+                  level: 'info',
+                });*/
     this.golemNetworkProvider = new GolemNetwork({
-      logger,
+      // logger,
       api: {
         key: this.appConfig.getInferred('yagnaAppKey'),
         url: 'http://185.238.72.212:7465',
