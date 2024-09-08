@@ -68,24 +68,6 @@ const Navbar: React.FC = () => {
             >
               Zadania
             </a>
-            <a
-              href="#"
-              className="text-base font-normal text-gray-400 transition-all duration-200 hover:text-white"
-            >
-              Features
-            </a>
-            <a
-              href="#"
-              className="text-base font-normal text-gray-400 transition-all duration-200 hover:text-white"
-            >
-              Pricing
-            </a>
-            <a
-              href="#"
-              className="text-base font-normal text-gray-400 transition-all duration-200 hover:text-white"
-            >
-              Support
-            </a>
           </nav>
 
           <div className="hidden lg:flex lg:items-center lg:justify-end lg:space-x-8">
@@ -109,25 +91,7 @@ const Navbar: React.FC = () => {
                 href="#"
                 className="text-base font-normal text-gray-400 transition-all duration-200 hover:text-white"
               >
-                Products
-              </a>
-              <a
-                href="#"
-                className="text-base font-normal text-gray-400 transition-all duration-200 hover:text-white"
-              >
-                Features
-              </a>
-              <a
-                href="#"
-                className="text-base font-normal text-gray-400 transition-all duration-200 hover:text-white"
-              >
-                Pricing
-              </a>
-              <a
-                href="#"
-                className="text-base font-normal text-gray-400 transition-all duration-200 hover:text-white"
-              >
-                Support
+                Zadania
               </a>
 
               <div className="relative inline-flex items-center justify-center group">
