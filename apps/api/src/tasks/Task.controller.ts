@@ -7,16 +7,12 @@ import {
 } from '@nestjs/common';
 import { FileInterceptor } from '@nestjs/platform-express';
 
-import { GolemService } from '../golem/Golem.service';
 import { CreateTaskDto } from './dtos';
 import { TaskService } from './Task.service';
 
 @Controller('task')
 export class TaskController {
-  public constructor(
-    private readonly taskService: TaskService,
-    private readonly golemService: GolemService,
-  ) {}
+  public constructor(private readonly taskService: TaskService) {}
 
   @UseInterceptors(FileInterceptor('file'))
   @Post('createTask')

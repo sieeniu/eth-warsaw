@@ -11,7 +11,6 @@ export class GolemService {
 
   public constructor(private readonly appConfig: AppConfigService) {
     this.golemNetworkProvider = new GolemNetwork({
-      logger: pinoPrettyLogger({ level: 'info' }),
       api: {
         key: this.appConfig.getInferred('yagnaAppKey'),
         url: 'http://185.238.72.212:7465',
