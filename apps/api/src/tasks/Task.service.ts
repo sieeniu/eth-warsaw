@@ -8,10 +8,12 @@ import { v4 as uuidv4 } from 'uuid';
 import { FileEntity } from '../file';
 import { CreateTaskDto } from './dtos';
 import { TaskEntity } from './entities';
+import { GolemService } from '../golem/Golem.service';
 
 @Injectable()
 export class TaskService {
   public constructor(
+    private readonly golemService: GolemService,
     @InjectRepository(FileEntity)
     private readonly fileRepository: Repository<FileEntity>,
     @InjectRepository(TaskEntity)
@@ -54,6 +56,8 @@ export class TaskService {
       title: body.title,
       status: 'Utworzono', // todo
     });
+
+    await this.golemService.executeTask(uploadPath);
 
     return {
       id: task.id,
