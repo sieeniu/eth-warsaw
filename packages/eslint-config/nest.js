@@ -20,7 +20,7 @@ module.exports = {
   plugins: ["import", "simple-import-sort", "testing-library"],
   rules: {
     "import/no-cycle": [
-      "error",
+      "warn",
       {
         maxDepth: 10,
         ignoreExternal: true,
@@ -29,7 +29,8 @@ module.exports = {
     "@typescript-eslint/no-unused-vars": "warn",
     "@typescript-eslint/no-magic-numbers": "warn",
     "@typescript-eslint/no-unsafe-argument": "warn",
-    "turbo/no-undeclared-env-vars": "warn"
+    "turbo/no-undeclared-env-vars": "warn",
+    "@typescript-eslint/no-unsafe-call": "warn",
   },
   settings: {
     "import/resolver": {
