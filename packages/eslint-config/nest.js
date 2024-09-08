@@ -1,3 +1,4 @@
+const { warn } = require("node:console");
 const { resolve } = require("node:path");
 
 const project = resolve(process.cwd(), "tsconfig.json");
@@ -25,6 +26,10 @@ module.exports = {
         ignoreExternal: true,
       },
     ],
+    "@typescript-eslint/no-unused-vars": "warn",
+    "@typescript-eslint/no-magic-numbers": "warn",
+    "@typescript-eslint/no-unsafe-argument": "warn",
+    "turbo/no-undeclared-env-vars": "warn"
   },
   settings: {
     "import/resolver": {

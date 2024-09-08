@@ -7,6 +7,7 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
 } from '@/components/ui/navigation-menu';
+import { IDKitVerification } from '@/components/usable/Verify';
 
 export const DefaultLayout = ({ children }: PropsWithChildren) => {
   return (
@@ -30,6 +31,8 @@ export const DefaultLayout = ({ children }: PropsWithChildren) => {
               </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
+
+          <IDKitVerification />
         </nav>
       </header>
       <main className="p-4">{children}</main>
