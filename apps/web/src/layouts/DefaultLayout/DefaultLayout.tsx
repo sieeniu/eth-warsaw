@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import { PropsWithChildren } from 'react';
 import Navbar from "@/components/usable/Navbar";
+import { IDKitVerification } from '@/components/usable/Verify';
 
 export const DefaultLayout = ({ children }: PropsWithChildren) => {
   return (
@@ -11,6 +12,8 @@ export const DefaultLayout = ({ children }: PropsWithChildren) => {
       </Head>
       <header className="bg-white text-gray-600 p-4">
         <Navbar/>
+        <IDKitVerification />
+
       </header>
       <main className="p-4">{children}</main>
     </>
