@@ -1,6 +1,5 @@
 import Head from 'next/head';
 import { PropsWithChildren } from 'react';
-import { IDKitWidget, VerificationLevel, ISuccessResult } from '@worldcoin/idkit'
 
 import {
   NavigationMenu,
@@ -8,6 +7,7 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
 } from '@/components/ui/navigation-menu';
+import { IDKitVerification } from '@/components/usable/Verify';
 
 export const DefaultLayout = ({ children }: PropsWithChildren) => {
   return (
@@ -31,8 +31,9 @@ export const DefaultLayout = ({ children }: PropsWithChildren) => {
               </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
-        </nav>
 
+          <IDKitVerification />
+        </nav>
       </header>
       <main className="p-4">{children}</main>
     </>
