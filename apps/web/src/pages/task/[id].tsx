@@ -1,8 +1,8 @@
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 
-import { DefaultLayout } from '@/layouts';
 import { Loading } from '@/components/ui/Loading';
+import { DefaultLayout } from '@/layouts';
 
 const TaskDetails = () => {
   const router = useRouter();

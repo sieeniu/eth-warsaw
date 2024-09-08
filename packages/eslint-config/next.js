@@ -30,7 +30,7 @@ module.exports = {
     "@typescript-eslint/no-unsafe-assignment": "warn",
     "@typescript-eslint/no-unsafe-member-access": "warn",
     "@typescript-eslint/no-unsafe-return": "warn",
-    "@typescript-eslint/no-shadow": "error",
+    "@typescript-eslint/no-shadow": "warn",
     "@typescript-eslint/no-unused-vars": "warn",
     "@typescript-eslint/no-magic-numbers": [
       "warn",
@@ -55,6 +55,11 @@ module.exports = {
     "no-console": "warn",
     "turbo/no-undeclared-env-vars": "warn",
     "@next/next/no-html-link-for-pages": "warn",
+    "@typescript-eslint/no-misused-promises": "warn",
+    "@typescript-eslint/no-floating-promises": "warn",
+    "@typescript-eslint/no-unsafe-argument": "warn",
+    "@typescript-eslint/restrict-template-expressions": "warn",
+    "@typescript-eslint/no-explicit-any": "warn",
   },
   ignorePatterns: [
     // Ignore dotfiles

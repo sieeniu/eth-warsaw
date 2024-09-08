@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 
+import { Loading } from '@/components/ui/Loading';
 import {
   Table,
   TableBody,
@@ -9,7 +10,6 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table';
-import { Loading } from '@/components/ui/Loading';
 
 const TaskTable = () => {
   const [tasks, setTasks] = useState([]);
