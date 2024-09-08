@@ -2,6 +2,7 @@ import {
   Body,
   Controller,
   Get,
+  Param,
   Post,
   UploadedFile,
   UseInterceptors,
@@ -14,6 +15,11 @@ import { TaskService } from './Task.service';
 @Controller('task')
 export class TaskController {
   public constructor(private readonly taskService: TaskService) {}
+
+  @Get(':id')
+  public async getTask(@Param('id') taskId: string) {
+    return await this.taskService.getTask(taskId);
+  }
 
   @UseInterceptors(FileInterceptor('file'))
   @Post('createTask')

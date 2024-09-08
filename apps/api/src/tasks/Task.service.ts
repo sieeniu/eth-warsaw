@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { writeFile } from 'fs/promises';
 import { join } from 'path';
@@ -17,6 +17,28 @@ export class TaskService {
     @InjectRepository(TaskEntity)
     private readonly taskRepository: Repository<TaskEntity>,
   ) {}
+
+  public async getTask(id: string) {
+    const task = await this.taskRepository.findOne({
+      where: { id },
+      relations: { file: true },
+    });
+
+    if (!task) {
+      throw new NotFoundException();
+    }
+
+    return {
+      id: task.id,
+      title: task.title,
+      file: {
+        id: task.file.id,
+        name: task.file.name,
+      },
+      status: task.status,
+      createdAt: task.createdAt,
+    };
+  }
 
   public async createTask(body: CreateTaskDto, file: Express.Multer.File) {
     const uniqueFileName = `${uuidv4()}${file.size}.sh`;
