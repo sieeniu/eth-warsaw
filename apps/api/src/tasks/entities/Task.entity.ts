@@ -22,6 +22,9 @@ export class TaskEntity {
   @ManyToOne(() => FileEntity, file => file.files)
   file!: FileEntity;
 
+  @Column()
+  status!: string;
+
   @CreateDateColumn()
   createdAt!: string;
 }

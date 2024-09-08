@@ -1,6 +1,7 @@
 import {
   Body,
   Controller,
+  Get,
   Post,
   UploadedFile,
   UseInterceptors,
@@ -21,5 +22,10 @@ export class TaskController {
     @UploadedFile() file: Express.Multer.File,
   ) {
     return await this.taskService.createTask(body, file);
+  }
+
+  @Get()
+  public async list() {
+    return await this.taskService.getTasks();
   }
 }

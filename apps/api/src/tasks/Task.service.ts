@@ -30,6 +30,7 @@ export class TaskService {
     const task = await this.taskRepository.save({
       fileId: fileRecord.id,
       title: body.title,
+      status: 'Utworzono', // todo
     });
 
     return {
@@ -37,6 +38,19 @@ export class TaskService {
       title: task.title,
       fileId: fileRecord.id,
       createdAt: task.createdAt,
+    };
+  }
+
+  async getTasks() {
+    const tasks = await this.taskRepository.find({});
+
+    return {
+      items: tasks.map(task => ({
+        id: task.id,
+        title: task.title,
+        status: task.status,
+        createdAt: task.createdAt,
+      })),
     };
   }
 }
