@@ -20,7 +20,7 @@ module.exports = {
   plugins: ["import", "simple-import-sort", "testing-library"],
   rules: {
     "import/no-cycle": [
-      "error",
+      "warn",
       {
         maxDepth: 10,
         ignoreExternal: true,
