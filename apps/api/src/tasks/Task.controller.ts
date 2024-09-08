@@ -19,8 +19,8 @@ export class TaskController {
   ) {}
 
   @UseInterceptors(FileInterceptor('file'))
-  @Post('uploadFile')
-  public async uploadTaskFile(
+  @Post('createTask')
+  public async createTask(
     @Body() body: CreateTaskDto,
     @UploadedFile() file: Express.Multer.File,
   ) {

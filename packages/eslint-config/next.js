@@ -53,6 +53,8 @@ module.exports = {
     "import/no-self-import": "error",
     "no-unused-vars": "warn",
     "no-console": "warn",
+    "turbo/no-undeclared-env-vars": "warn",
+    "@next/next/no-html-link-for-pages": "warn",
   },
   ignorePatterns: [
     // Ignore dotfiles
