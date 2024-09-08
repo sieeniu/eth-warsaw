@@ -66,7 +66,7 @@ const Navbar: React.FC = () => {
               href="/tasks"
               className="text-base font-normal text-gray-400 transition-all duration-200 hover:text-white"
             >
-              Zadania
+              Tasks
             </a>
           </nav>
 
@@ -91,7 +91,7 @@ const Navbar: React.FC = () => {
                 href="#"
                 className="text-base font-normal text-gray-400 transition-all duration-200 hover:text-white"
               >
-                Zadania
+                Tasks
               </a>
 
               <div className="relative inline-flex items-center justify-center group">

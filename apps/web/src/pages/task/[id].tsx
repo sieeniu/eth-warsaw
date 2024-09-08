@@ -61,7 +61,7 @@ const TaskDetails = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 mt-12">
               <div className="p-4 border border-gray-200 rounded-lg text-center">
                 <p className="text-base font-medium text-gray-500">Gas price</p>
-                <p className="mt-2 text-3xl font-bold text-gray-900">Ξ {taskData.gasPrice || '1.7'} POL</p>
+                <p className="mt-2 text-3xl font-bold text-gray-900">{taskData.gasPrice || '0.0005'} ETH</p>
               </div>
               <div className="p-4 border border-gray-200 rounded-lg text-center">
                 <p className="text-base font-medium text-gray-500">Used</p>
@@ -86,7 +86,7 @@ const TaskDetails = () => {
                 <div className="max-w-xs mx-auto overflow-hidden bg-white border border-gray-100 rounded-lg shadow-xl shadow-gray-500/10">
                   <div className="p-4">
                     <p className="text-center font-medium text-gray-800 mb-2">
-                      {taskData.inputFile || 'skaner_csv_v3.sh'}
+                      {taskData.inputFile || 'advance_equations.sh'}
                     </p>
                     <div className="flex justify-center items-center mt-4">
                       <svg
@@ -97,7 +97,7 @@ const TaskDetails = () => {
                           fill="none"
                           stroke="currentColor"
                           strokeWidth="2"
-                          strokeLinecap="round"
+                          strokeLinecap="round"x
                           strokeLinejoin="round"
                           className="text-gray-600"
                       >

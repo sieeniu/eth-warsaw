@@ -70,7 +70,7 @@ const TaskTable = () => {
                   <TableCell>{task.id}</TableCell>
                   <TableCell>{task.title}</TableCell>
                   <TableCell>{task.status}</TableCell>
-                  <TableCell>{task.createdAt}</TableCell>
+                  <TableCell>{new Date(task.createdAt).toLocaleDateString('pl-PL', { year: 'numeric', month: '2-digit', day: '2-digit' })}</TableCell>
                 </TableRow>
             ))}
           </TableBody>
