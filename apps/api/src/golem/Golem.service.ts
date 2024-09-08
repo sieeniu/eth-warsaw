@@ -23,7 +23,6 @@ export class GolemService {
       const order: MarketOrderSpec = {
         demand: {
           workload: { imageTag: 'golem/alpine:latest' },
-          subnetTag: 'ethwarsawpriv1',
         },
         market: {
           rentHours: 15 / 60,

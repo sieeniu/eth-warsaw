@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-magic-numbers */
 import { NestFactory } from '@nestjs/core';
+import * as process from 'process';
 
 import { AppModule } from './app.module';
-import * as process from 'process';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
