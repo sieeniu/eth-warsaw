@@ -45,12 +45,15 @@ const TaskTable = () => {
       <>
         <div className="flex items-center justify-between mb-4">
           <h1 className="text-2xl font-bold">Task List</h1>
-          <Link
-              href="/taskCreate"
-              className="inline-flex items-center justify-center px-4 py-2 text-white bg-blue-600 rounded-md hover:bg-blue-700 transition-all duration-200"
-          >
-            Create Task
-          </Link>
+          <div className="relative inline-flex items-center justify-center group">
+            <div className="absolute transition-all duration-200 rounded-full -inset-px bg-gradient-to-r from-cyan-500 to-purple-500 group-hover:shadow-lg group-hover:shadow-cyan-500/50"></div>
+            <Link
+                href="/taskCreate"
+                className="relative inline-flex items-center justify-center w-full px-6 py-2 text-base font-normal text-white bg-black border border-transparent rounded-full"
+            >
+              Create Task
+            </Link>
+          </div>
         </div>
         <Table>
           <TableHeader>
