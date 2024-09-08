@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import { IDKitVerification } from '@/components/usable/Verify';
 
-const Header = () => {
+const Navbar: React.FC = () => {
     const [expanded, setExpanded] = useState(false);
 
     return (
@@ -90,7 +91,6 @@ const Header = () => {
                         </a>
                     </nav>
 
-
                     <div className="hidden lg:flex lg:items-center lg:justify-end lg:space-x-8">
                         <div className="relative inline-flex items-center justify-center group">
                             <div className="absolute transition-all duration-200 rounded-full -inset-px bg-gradient-to-r from-cyan-500 to-purple-500 group-hover:shadow-lg group-hover:shadow-cyan-500/50"></div>
@@ -99,7 +99,7 @@ const Header = () => {
                                 className="relative inline-flex items-center justify-center px-6 py-2 text-base font-normal text-white bg-black border border-transparent rounded-full"
                                 role="button"
                             >
-                                Login
+                                <IDKitVerification/>
                             </a>
                         </div>
                     </div>
@@ -140,7 +140,7 @@ const Header = () => {
                                     className="relative inline-flex items-center justify-center w-full px-6 py-2 text-base font-normal text-white bg-black border border-transparent rounded-full"
                                     role="button"
                                 >
-                                    Login
+                                    <IDKitVerification/>
                                 </a>
                             </div>
                         </div>
@@ -151,4 +151,4 @@ const Header = () => {
     );
 };
 
-export default Header;
+export default Navbar;
