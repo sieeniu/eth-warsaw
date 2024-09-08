@@ -6,9 +6,9 @@ import { Repository } from 'typeorm';
 import { v4 as uuidv4 } from 'uuid';
 
 import { FileEntity } from '../file';
+import { GolemService } from '../golem/Golem.service';
 import { CreateTaskDto } from './dtos';
 import { TaskEntity } from './entities';
-import { GolemService } from '../golem/Golem.service';
 
 @Injectable()
 export class TaskService {

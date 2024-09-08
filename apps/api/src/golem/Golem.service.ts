@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-magic-numbers */
 import { GolemNetwork, MarketOrderSpec, Result } from '@golem-sdk/golem-js';
-import { pinoPrettyLogger } from '@golem-sdk/pino-logger';
 import { BadRequestException, Injectable } from '@nestjs/common';
 
 import { AppConfigService } from '../config';

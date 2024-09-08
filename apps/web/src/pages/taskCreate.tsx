@@ -1,8 +1,9 @@
+import { useRouter } from 'next/router';
 import { useCallback, useState } from 'react';
 import { useDropzone } from 'react-dropzone';
-import { useRouter } from 'next/router';
-import { DefaultLayout } from '@/layouts';
+
 import { createTask } from '@/apiCalls';
+import { DefaultLayout } from '@/layouts';
 
 const TaskCreate = () => {
   const [isUploading, setIsUploading] = useState(false);
