@@ -1,3 +1,52 @@
+## Bounties
+
+This project was developed for the following bounties:
+
+- **EthWarsaw Open**
+- **Golem Application Build**
+- **World Coin: Best Use of World ID**
+- **DBForest**
+
+## Overview
+
+After exploring the **Golem** infrastructure, we identified a significant opportunity to leverage it for social actions, specifically supporting universities. We believe Golem's decentralized computing resources can be a great fit for academic environments.
+
+We utilized **DB Forest**, a database promoted at the hackathon, which turned out to be a great alternative to AWS, our original choice.
+
+For authentication, we integrated **WorldCoinID**, which provided a seamless identity verification system for our application.
+
+## Features
+
+- Integration of Golem's computing resources for social applications.
+- DB Forest as the primary database solution.
+- WorldCoinID for secure authentication.
+
+## Screenshots
+
+Task List View
+![Zrzut ekranu 2024-09-8 o 09.54.47.png](..%2F..%2FDesktop%2FZrzut%20ekranu%202024-09-8%20o%2009.54.47.png)
+
+Add Task View
+![Zrzut ekranu 2024-09-8 o 09.55.06.png](..%2F..%2FDesktop%2FZrzut%20ekranu%202024-09-8%20o%2009.55.06.png)
+![Zrzut ekranu 2024-09-8 o 09.55.15.png](..%2F..%2FDesktop%2FZrzut%20ekranu%202024-09-8%20o%2009.55.15.png)
+
+Task details View
+![Zrzut ekranu 2024-09-8 o 09.56.25.png](..%2F..%2FDesktop%2FZrzut%20ekranu%202024-09-8%20o%2009.56.25.png)
+![Zrzut ekranu 2024-09-8 o 09.57.34.png](..%2F..%2FDesktop%2FZrzut%20ekranu%202024-09-8%20o%2009.57.34.png)
+
+## Known Issues
+
+One notable bug occurred while trying to upload a file using **Golem’s computing power**. The Golem API returned the following error:
+
+After investigating, we found that other users had reported the same issue on Discord. A staff member was able to guide us in the right direction on Sunday morning, but we ran out of time to fully implement the solution.
+
+GolemWorkError: Script initialization failed for command: {“transfer”:{“to”:“container:/golem/input/test.sh”}}. {“jsonrpc”:“2.0”,“id”:“55543ef2-dad5-4d7c-ba04-408f8861c07e”,“error”:{“code”:-32000,“message”:“Called service /local/identity/Get is unavailable”}}
+
+## Conclusion
+
+Although we faced challenges with the Golem API, the project demonstrates the potential of combining decentralized computing, alternative databases, and secure authentication in innovative applications. With more time, the integration could be completed successfully.
+
+
 # Turborepo starter
 
 This is an official starter Turborepo.
